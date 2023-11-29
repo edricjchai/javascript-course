@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Objects</title>
+  </head>
+  <body>
+    <script>
+      /*
+      const product = {
+        name: 'socks',
+        price: 1090
+      };
+      console.log(product);
+      console.log(product.name);
+      console.log(product.price);
+
+      product.name = 'cotton socks';
+      console.log(product);
+
+      product.newProperty = true;
+      console.log(product);
+
+      delete product.newProperty;
+      console.log(product);
+      */
+     
+      /*
+      const product2 = {
+        name: 'shirt',
+        'delivery-time': '1 day',
+        rating: {
+          stars: 4.5,
+          count: 87
+        },
+        fun: function function1(){
+          console.log('function inside object');
+        }
+      };
+      console.log(product2);
+      console.log(product2.name);
+      console.log(product2['name']);
+      console.log(product2['delivery-time']);
+      
+      console.log(product2.rating.count);
+      product2.fun;
+
+      console.log(typeof console);
+      console.log(typeof console.log);
+
+      const jsonString = JSON.stringify(product2); //converts Javascript Object to JSON
+      console.log(JSON.parse(jsonString)); //convert JSON to Javascript Object
+      */
+
+      /*
+      console.log('hello'.length)
+      console.log('hello'.toUpperCase());
+
+      const object1 = {
+        message: 'hello'
+      };
+      const object2 = object1;
+
+      object1.message = 'Good job!';
+      console.log(object1);
+      console.log(object2);
+
+      const object3 = {
+        message: 'Good job!'
+      };
+      console.log(object3 === object1);
+      console.log(object2 === object1);
+
+      const object4 = {
+        message: 'Good job!',
+        price: 799
+      };
+
+      //const message = object4.message;
+      const { message, price } = object4; //Destructuring shortcut
+      console.log(message);
+      console.log(price);
+
+      const object5 = {
+        //message: message
+        message,
+        //Shorthand property - if both property and variable name are the same
+
+        method: function function1(){
+          console.log('method');
+        }
+      };
+      console.log(object5);
+      object5.method();
+      */
+
+      const productX = {
+        name: 'basketball',
+        price: 2095
+      };
+      
+      productX.price += 500;
+      console.log(productX.price);
+
+      productX['delivery-time'] = '3 days';
+      console.log(productX['delivery-time']);
+
+      const productY = {
+        name: 'shoe',
+        price: 1530
+      };
+
+      function comparePrice(product1, product2){
+        if(product1.price > product2.price) return product1;
+        return product2;
+      };
+
+      console.log(comparePrice(productX, productY));
+
+      function isSameProduct(product1, product2){
+        return product1 === product2;
+      }
+      console.log(isSameProduct(productX, productX));
+      console.log('Good Morning'.toLowerCase());
+    </script>
+  </body>
+</html>
