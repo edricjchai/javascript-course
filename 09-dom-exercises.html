@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM exercises</title>
+  </head>
+  <body>
+    <button>9a</button>
+    <button class="js-9b">9b</button>
+    <br>
+
+    <button onclick="
+      updateChoseElement('heads');
+    ">heads</button>
+    <button onclick="
+      updateChoseElement('tails');
+    ">tails</button>
+
+    <p class="js-chose"></p>
+    
+    <input class="input-name" placeholder="Name" onkeydown="
+      onEnter(event.key);
+    ">
+    <button onclick="
+      showNameInput();
+    ">Submit</button>
+    <p class="display-name"></p>
+
+    <input class="input-text" placeholder="Type something" onkeyup="
+      if(event){
+        console.log(event);
+        document.querySelector('.copy-input')
+          .innerHTML = document.querySelector('.input-text').value;
+      }
+    ">
+    <p class="copy-input"></p>
+
+    <script>
+      function updateChoseElement(chose){
+        document.querySelector('.js-chose')
+          .innerHTML = `You chose: ${chose}`;
+      }
+      function onEnter(key){
+        if(key === 'Enter') showNameInput();
+      }
+      function showNameInput(){
+        const name = document.querySelector('.input-name').value
+        
+        if(name){
+          document.querySelector('.display-name')
+            .innerHTML = `Your name is ${name}`;
+        } else{
+          document.querySelector('.display-name')
+            .innerHTML = 'Invalid Input.'
+        }
+
+        document.querySelector('.input-name')
+          .value = '';
+      }
+
+
+      console.log(document.querySelector('button').innerHTML);
+      document.querySelector('.js-9b')
+        .innerHTML = '9b done!';
+    </script>
+  </body>
+</html>
