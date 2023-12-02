@@ -1,0 +1,45 @@
+.cart-button {
+  background-color: rgb(255, 216, 20);
+  font-family: Arial;
+  padding: 3px 25px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.uber-btn{
+  padding: 8px 15px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  margin-bottom: 50px;
+}
+
+.schedule{
+  background-color: rgb(230, 230, 230);
+  color: black;
+  cursor: pointer;
+}
+
+
+.toggle-button{
+  padding: 8px 15px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(230, 230, 230);
+  color: black;
+  cursor: pointer;
+  margin-bottom: 50px;
+}
+
+.toggle-button-on{
+  background-color: black;
+  color: white;
+}
+
+.green{
+  background-color: green;
+}
