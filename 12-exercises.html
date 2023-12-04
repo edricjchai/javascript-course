@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Advanced Functions Exercises</title>
+  </head>
+  <body>
+    <button class="js-timeoutIded-button" onclick="
+        loadingButton();
+      ">DOM</button>
+
+    <button class="js-add-cart" onclick="
+      addCart();
+    ">Add to cart</button>
+    <p class="js-cart-notification"></p>
+    <button onclick="incrementMessages(1)">Add</button>
+    <button onclick="incrementMessages(-1)">Remove</button>
+
+    <script>
+      const add = function(){
+        console.log(2 + 3);
+      }
+      add();
+
+      function runTwice(fun){
+        fun();
+        fun();
+      }
+      runTwice(function(){
+        console.log('12b');
+      });
+      runTwice(add);
+
+      function loadingButton(){
+        document.querySelector('.js-timeoutIded-button')
+          .innerHTML = 'Loading...';
+        let timeoutId = setTimeout(function(){
+        document.querySelector('.js-timeoutIded-button')
+         .innerHTML = 'Finished!'}, 1000);
+      }
+
+      let timeoutId;
+      function addCart(){
+        document.querySelector('.js-cart-notification')
+          .innerHTML= 'Added';
+
+        let timing = false;
+        clearTimeout(timeoutId);
+
+        timeoutId = setTimeout(function(){
+          document.querySelector('.js-cart-notification')
+          .innerHTML = '';
+        }, 2000);
+      }
+
+      let messages = 2;
+      let titleIntervalId;
+
+      function beginTitleNotification(){
+        titleIntervalId = setInterval(function(){
+          //console.log('running');
+          if(document.title === 'App'){
+            document.title = `(${messages}) New Messages`;
+          }
+          else{
+            document.title = 'App'
+          }
+        },1000);
+      }
+      
+      beginTitleNotification();
+
+      function incrementMessages(value){
+        clearInterval(titleIntervalId);
+        if(messages || value > 0){
+          messages += value;
+          beginTitleNotification();
+        } 
+        if(messages === 0){
+          clearInterval(titleIntervalId);
+          document.title = 'App';
+        }
+      }
+    </script>
+  </body>
+</html>
