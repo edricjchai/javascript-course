@@ -4,13 +4,9 @@
     <title>Advanced Functions Exercises</title>
   </head>
   <body>
-    <button class="js-timeoutIded-button" onclick="
-        loadingButton();
-      ">DOM</button>
+    <button class="js-timeoutIded-button">DOM</button>
 
-    <button class="js-add-cart" onclick="
-      addCart();
-    ">Add to cart</button>
+    <button class="js-add-cart">Add to cart</button>
     <p class="js-cart-notification"></p>
     <button onclick="incrementMessages(1)">Add</button>
     <button onclick="incrementMessages(-1)">Remove</button>
@@ -29,6 +25,16 @@
         console.log('12b');
       });
       runTwice(add);
+
+      document.querySelector('.js-timeoutIded-button')
+        .addEventListener('click', () => {
+          loadingButton();
+        })
+
+      document.querySelector('.js-add-cart')
+      .addEventListener('click', () => {
+        addCart();
+      })
 
       function loadingButton(){
         document.querySelector('.js-timeoutIded-button')
