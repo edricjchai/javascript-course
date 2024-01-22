@@ -93,6 +93,7 @@
       object5.method();
       */
 
+      /*
       const productX = {
         name: 'basketball',
         price: 2095
@@ -121,6 +122,23 @@
       }
       console.log(isSameProduct(productX, productX));
       console.log('Good Morning'.toLowerCase());
+      */
+     
+      const productX = {
+        name: 'basketball',
+        price: 2095
+      };
+      
+      productX.price += 500;
+      console.log(productX.price);
+
+      productX['delivery-time'] = '3 days';
+      productX['delivery-time'] = '2 days';
+      console.log(productX);
+
+      Object.values(productX).forEach((value) => {
+        console.log(value);
+      });
     </script>
   </body>
 </html>
